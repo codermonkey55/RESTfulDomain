@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulDomain", "RESTfulDomain\RESTfulDomain.csproj", "{0CFA1762-2F46-43DC-8438-61DAE5578A0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulDomain.Example.Banking", "RESTfulDomain.Example.Banking\RESTfulDomain.Example.Banking.csproj", "{30C5D4BD-B8CB-44D1-A53B-AFE1D96C4E80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0CFA1762-2F46-43DC-8438-61DAE5578A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CFA1762-2F46-43DC-8438-61DAE5578A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CFA1762-2F46-43DC-8438-61DAE5578A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C5D4BD-B8CB-44D1-A53B-AFE1D96C4E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C5D4BD-B8CB-44D1-A53B-AFE1D96C4E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C5D4BD-B8CB-44D1-A53B-AFE1D96C4E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C5D4BD-B8CB-44D1-A53B-AFE1D96C4E80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
