@@ -1,4 +1,4 @@
-﻿namespace RESTfulDomain
+﻿namespace RESTfulDomain.Model
 {
     public interface IDataModel
     {

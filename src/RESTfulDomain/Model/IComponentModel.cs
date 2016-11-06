@@ -1,4 +1,4 @@
-﻿namespace RESTfulDomain
+﻿namespace RESTfulDomain.Model
 {
     public interface IComponentModel
     {
@@ -10,8 +10,8 @@
         TDataModel Data { get; }
     }
 
-    public interface IComponentModel<TDomainModel, out TDataModel> : IComponentModel<TDataModel> where TDataModel : IDataModel
+    public interface IComponentModel<out TDomainModel, out TDataModel> : IComponentModel<TDataModel> where TDataModel : IDataModel
     {
-        TDomainModel DomainModel { get; }
+        TDomainModel Model { get; }
     }
 }

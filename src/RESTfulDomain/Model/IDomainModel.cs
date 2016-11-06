@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RESTfulDomain
+namespace RESTfulDomain.Model
 {
     public interface IDomainModel
     {
@@ -19,7 +19,7 @@ namespace RESTfulDomain
 
         void LoadData(int dataModelId);
 
-        IComponentModel<TDataModel> GetCapability<TComponent>();
+        IComponentModel<TDataModel> GetCapability<TComponent>() where TComponent : IComponentModel<TDataModel>;
     }
 
     public interface IDomainModel<TDomainModel, TDataModel> : IDomainModel<TDataModel> where TDataModel : class, IDataModel
