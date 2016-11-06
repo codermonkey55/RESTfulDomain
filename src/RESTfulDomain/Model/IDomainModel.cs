@@ -11,7 +11,7 @@ namespace RESTfulDomain.Model
     {
         TDataModel Data { get; }
 
-        IReadOnlyCollection<IComponentModel> Capabalities { get; }
+        IReadOnlyCollection<IComponentModel<TDataModel>> Capabalities { get; }
 
         bool HasData();
 
@@ -19,12 +19,18 @@ namespace RESTfulDomain.Model
 
         void LoadData(int dataModelId);
 
-        IComponentModel<TDataModel> GetCapability<TComponent>() where TComponent : IComponentModel<TDataModel>;
+        void LoadData<TId>(TId dataModelId) where TId : struct;
+
+        TComponent GetCapability<TComponent>() where TComponent : class, IComponentModel<TDataModel>;
     }
 
-    public interface IDomainModel<TDomainModel, TDataModel> : IDomainModel<TDataModel> where TDataModel : class, IDataModel
+    public interface IDomainModel<TDomainModel, TDataModel> : IDomainModel<TDataModel>
+        where TDataModel : class, IDataModel
+        where TDomainModel : class, IDomainModel<TDataModel>
     {
-        IComponentModel<TDomainModel, TDataModel> GetCapability<TComponent>(TDataModel dataModel = null)
+        new IReadOnlyCollection<IComponentModel<TDomainModel, TDataModel>> Capabalities { get; }
+
+        new IComponentModel<TDomainModel, TDataModel> GetCapability<TComponent>()
             where TComponent : IComponentModel<TDomainModel, TDataModel>;
     }
 }

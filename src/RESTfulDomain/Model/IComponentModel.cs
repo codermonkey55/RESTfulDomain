@@ -10,7 +10,8 @@
         TDataModel Data { get; }
     }
 
-    public interface IComponentModel<out TDomainModel, out TDataModel> : IComponentModel<TDataModel> where TDataModel : IDataModel
+    public interface IComponentModel<out TDomainModel, out TDataModel> : IComponentModel<TDataModel> where TDataModel : class, IDataModel
+        where TDomainModel : class, IDomainModel<TDataModel>
     {
         TDomainModel Model { get; }
     }
