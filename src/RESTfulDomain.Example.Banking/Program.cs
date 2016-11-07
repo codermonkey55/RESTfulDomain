@@ -1,4 +1,5 @@
-﻿using RESTfulDomain.Example.Banking.Model;
+﻿using NodaMoney;
+using RESTfulDomain.Example.Banking.Model;
 
 namespace RESTfulDomain.Example.Banking
 {
@@ -6,13 +7,13 @@ namespace RESTfulDomain.Example.Banking
     {
         static void Main(string[] args)
         {
-            IAccount account = new Account(null);
+            IAccount account = new Account();
 
             Money remainingBalance = account.Withdraw.Amount(10.00m);
 
             Money currentBalance = account.Balance.Current;
 
-            bool isEqual = currentBalance.Equals(remainingBalance);
+            bool isEqual = currentBalance == remainingBalance;
         }
     }
 }

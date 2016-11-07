@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NodaMoney, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaMoney.1.0.0\lib\net45\NodaMoney.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,10 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\AccountData.cs" />
+    <Compile Include="Model\AccountStatus.cs" />
     <Compile Include="Model\Balance.cs" />
     <Compile Include="Model\Close.cs" />
     <Compile Include="Model\Deposit.cs" />
-    <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Open.cs" />
     <Compile Include="Model\Withdraw.cs" />
     <Compile Include="Program.cs" />
@@ -55,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RESTfulDomain\RESTfulDomain.csproj">

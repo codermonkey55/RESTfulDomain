@@ -1,8 +1,9 @@
-﻿using RESTfulDomain.Model;
+﻿using NodaMoney;
+using RESTfulDomain.Model;
 
 namespace RESTfulDomain.Example.Banking.Model
 {
-    internal interface IBalance : IDataModel
+    internal interface IBalance : IValueModel
     {
         Money Current { get; }
     }
@@ -15,7 +16,7 @@ namespace RESTfulDomain.Example.Banking.Model
 
         public Balance(decimal amount)
         {
-            _money = new Money(amount);
+            _money = Money.USDollar(amount);
         }
 
         public void Subtract(decimal amout)
