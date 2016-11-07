@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\IComponentModel.cs" />
+    <Compile Include="DomainModel.cs" />
+    <Compile Include="Model\ICapabilityContext.cs" />
+    <Compile Include="Model\ICapability.cs" />
+    <Compile Include="Model\ICapabilityProvider.cs" />
     <Compile Include="Model\IDataModel.cs" />
+    <Compile Include="Model\IDataModelProvider.cs" />
     <Compile Include="Model\IDomainModel.cs" />
+    <Compile Include="Model\IValueModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

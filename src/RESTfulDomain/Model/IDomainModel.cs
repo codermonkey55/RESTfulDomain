@@ -9,28 +9,16 @@ namespace RESTfulDomain.Model
 
     public interface IDomainModel<TDataModel> : IDomainModel where TDataModel : class, IDataModel
     {
-        TDataModel Data { get; }
+        TDataModel DataModel { get; }
 
-        IReadOnlyCollection<IComponentModel<TDataModel>> Capabalities { get; }
+        IReadOnlyCollection<ICapability<TDataModel>> Capabilities { get; }
 
         bool HasData();
 
         void Wrap(TDataModel dataModel);
 
-        void LoadData(int dataModelId);
-
         void LoadData<TId>(TId dataModelId) where TId : struct;
 
-        TComponent GetCapability<TComponent>() where TComponent : class, IComponentModel<TDataModel>;
-    }
-
-    public interface IDomainModel<TDomainModel, TDataModel> : IDomainModel<TDataModel>
-        where TDataModel : class, IDataModel
-        where TDomainModel : class, IDomainModel<TDataModel>
-    {
-        new IReadOnlyCollection<IComponentModel<TDomainModel, TDataModel>> Capabalities { get; }
-
-        new IComponentModel<TDomainModel, TDataModel> GetCapability<TComponent>()
-            where TComponent : IComponentModel<TDomainModel, TDataModel>;
+        TComponent GetCapability<TComponent>() where TComponent : class, ICapability<TDataModel>;
     }
 }
